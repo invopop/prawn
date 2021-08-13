@@ -2,8 +2,7 @@
 
 module Prawn
   module EmbeddedFiles
-    # include PDF::Core::EmbeddedFiles
-    # Link to PR (https://github.com/prawnpdf/pdf-core/pull/47)
+    include PDF::Core::EmbeddedFiles
 
     # Add the file's data from a source to the document. Any kind of data with
     # a string representation can be embedded.
@@ -56,9 +55,7 @@ module Prawn
       filespec_obj = filespec.build_pdf_object(self)
 
       unless filespec.hidden?
-        # Wait for pdf-core PR
-
-        # attach_file(filespec.file_name, filespec_obj)
+        attach_file(filespec.file_name, filespec_obj)
       end
     end
 
